@@ -20,6 +20,9 @@
 #import <dlfcn.h>
 
 #import "X11WindowDriver.h"
+
+#ifdef X11
+
 #import "SIDefines.h"
 #import "FMT.h"
 
@@ -464,3 +467,5 @@ static BOOL execWithDisplay_(ExecWithDisplayBlock block, NSError ** error) {
 
 
 @end
+
+#endif

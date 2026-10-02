@@ -20,6 +20,8 @@
  THE SOFTWARE.
  */
 
+#import <ServiceManagement/ServiceManagement.h>
+
 #import "FMTLoginItems.h"
 
 #import "FMTDefines.h"
@@ -28,6 +30,7 @@
 
 - (id)initWithLoginItemsType_:(CFStringRef)type;
 - (LSSharedFileListItemRef) getApplicationLoginItemWithPath_:(NSString *)path;
+- (BOOL) isMainApplicationSessionItem_:(NSString *)path;
 
 @end
 
@@ -73,14 +76,33 @@
 - (BOOL) isInLoginItemsApplicationWithPath:(NSString *)path {
 	FMTAssertNotNil(path);
 	
-	return [self getApplicationLoginItemWithPath_:path] != nil;	
+	if (@available(macOS 13.0, *)) {
+		if ([self isMainApplicationSessionItem_:path]) {
+			SMAppServiceStatus status = [[SMAppService mainAppService] status];
+			return status == SMAppServiceStatusEnabled || status == SMAppServiceStatusRequiresApproval;
+		}
+	}
+
+	return [self getApplicationLoginItemWithPath_:path] != nil;
 }
 
 // following code has been inspired from Growl sources
 // http://growl.info/source.php
 - (void) toggleApplicationInLoginItemsWithPath:(NSString *)path enabled:(BOOL)enabled {
 	FMTAssertNotNil(path);
-	
+
+	if (@available(macOS 13.0, *)) {
+		if ([self isMainApplicationSessionItem_:path]) {
+			SMAppService *service = [SMAppService mainAppService];
+			NSError *error = nil;
+			BOOL done = enabled ? [service registerAndReturnError:&error] : [service unregisterAndReturnError:&error];
+			if (!done) {
+				NSLog(@"Unable to %@ login item %@: %@", enabled ? @"register" : @"unregister", path, error);
+			}
+			return;
+		}
+	}
+
 	OSStatus status;
 	LSSharedFileListItemRef existingItem = [self getApplicationLoginItemWithPath_:path];
 	CFURLRef URLToApp = CFURLCreateWithFileSystemPath(kCFAllocatorDefault, (CFStringRef)path, kCFURLPOSIXPathStyle, true);
@@ -131,15 +153,21 @@
 			Boolean foundIt = CFEqual(URL, URLToApp);
 			CFRelease(URL);
 			
-			if (foundIt)
+			if (foundIt) {
 				existingItem = item;
-			break;
+				break;
+			}
 		}
 	}
 	
 	CFRelease(URLToApp);
 	
 	return existingItem;
+}
+
+// LSSharedFileList session items stopped working in macOS 13; SMAppService replaces them but only for the running app.
+- (BOOL) isMainApplicationSessionItem_:(NSString *)path {
+	return type_ == kLSSharedFileListSessionLoginItems && [path isEqualToString:[[NSBundle mainBundle] bundlePath]];
 }
 
 + (FMTLoginItems *) sharedGlobalLoginItems {

@@ -30,7 +30,7 @@ NSString *const kActionIdentifierKey = @"kActionIdentifierKey";
 NSString *const kHotKeyKeyCodeKey = @"kHotKeyKeyCodeKey";
 NSString *const kHotKeyModifiersKey = @"kHotKeyModifiersKey";
 
-NSString *const kShiftItGithubIssueURL = @"https://github.com/fikovnik/ShiftIt/issues";
+NSString *const kShiftItGithubIssueURL = @"https://github.com/idkhanhvo272/ShiftIt/issues";
 
 NSString *const kHotKeysTabViewItemIdentifier = @"hotKeys";
 
@@ -106,6 +106,10 @@ NSString *const kHotKeysTabViewItemIdentifier = @"hotKeys";
     // looking at changes in the user defaults values itself, but since there is
     // unfortunatelly 2 defaults for one key this won't work well
     [self updateRecorderCombos];
+}
+
+- (IBAction)checkForUpdates:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:kShiftItReleasesURL]];
 }
 
 -(IBAction)reportIssue:(id)sender {
@@ -296,7 +300,7 @@ static NSString *hotkeyIdentifiers[] = {
     KeyCombo combo;
     combo.code = [defaults integerForKey:KeyCodePrefKey(identifier)];
     combo.flags = [defaults integerForKey:ModifiersPrefKey(identifier)];
-    [recorder setKeyCombo:combo];
+    [recorder setKeyCombo:combo keyChars:nil keyCharsIgnoringModifiers:nil];
 }
 
 #pragma mark TabView delegate methods

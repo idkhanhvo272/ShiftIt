@@ -2,6 +2,31 @@
 
 *Managing window size and position in OSX*
 
+# Apple Silicon fork
+
+This fork builds ShiftIt as a native universal app (arm64 + x86_64) for Apple Silicon Macs (M1–M4) on macOS 12 or newer. Upstream 1.6.6 is x86_64-only and runs under Rosetta.
+
+Changes from upstream:
+
+* The x86-only `ShortcutRecorder.framework` is replaced by its source ([Kentzo/ShortcutRecorder@0c481a6](https://github.com/Kentzo/ShortcutRecorder/tree/0c481a6), BSD), compiled into the app (`ShiftIt/Vendor`).
+* Sparkle is removed. Its appcast pointed at the upstream x86 build. *Check for Updates* opens this fork's releases page.
+* Hotkey dispatch casts `objc_msgSend` to its real prototype, which arm64 requires.
+* The Accessibility prompt opens *System Settings › Privacy & Security › Accessibility*. It closes by itself once access is granted, then ShiftIt relaunches, because `AXIsProcessTrusted()` keeps returning NO in a process that started without access.
+* *Open At Login* uses `SMAppService` on macOS 13+ (the old login items API no longer works there).
+* X11 support is compiled in only when XQuartz headers are installed.
+* Tests run on XCTest (`ShiftItTests` scheme).
+
+Upgrading from 1.6.6: both apps share the bundle id and the preferences, so your hotkeys carry over. Accessibility access does not, because the code signature differs. Remove the old *ShiftIt* entry in Accessibility with the − button, then enable the new one.
+
+Build and test:
+
+```sh
+xcodebuild -project ShiftIt/ShiftIt.xcodeproj -scheme ShiftIt -configuration Release build
+xcodebuild -project ShiftIt/ShiftIt.xcodeproj -scheme ShiftItTests test
+```
+
+The build is ad-hoc signed by default, so macOS asks for Accessibility again after every rebuild. Pass `CODE_SIGN_IDENTITY="Apple Development: …"` to keep the grant.
+
 # Looking for a new maintainer #[296](https://github.com/fikovnik/ShiftIt/issues/296).
 
 This project is looking for a new maintainer. Until that transition is completed, **there will likely not be further development on this project**. 
@@ -31,7 +56,7 @@ Change logs: change logs are versioned in the [repository](https://github.com/fi
 
 ## Download
 
-A binary build for OSX 10.7+ is available in [releases](https://github.com/fikovnik/ShiftIt/releases).
+Builds of this fork are published in [releases](https://github.com/idkhanhvo272/ShiftIt/releases). The upstream x86_64 build for OSX 10.7+ is in [upstream releases](https://github.com/fikovnik/ShiftIt/releases).
 
 ## Installation
 
@@ -52,9 +77,7 @@ If you find any problem not mentioned there, please submit an issue.
 
 ## Requirements
 
-* OSX 10.7+, 64-bit
-
-The primary development is done on OSX 10.10, but it should be running under OSX 10.7 as well.
+* macOS 12+, Apple Silicon or Intel (this fork)
 
 ## FAQ
 ##### How do I turn on/off windows cycling sizes with multiple hotkey presses?

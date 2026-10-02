@@ -45,7 +45,7 @@
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="checkForUpdates:" target="69" id="255"/>
+                                                <action selector="checkForUpdates:" target="-2" id="255"/>
                                             </connections>
                                         </button>
                                         <textField verticalHuggingPriority="750" id="582">
@@ -83,7 +83,7 @@
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="ShiftIt" id="818"/>
                                         </imageView>
                                         <matrix verticalHuggingPriority="750" mode="highlight" allowsEmptySelection="NO" autosizesCells="NO" id="823">
-                                            <rect key="frame" x="26" y="259" width="274" height="102"/>
+                                            <rect key="frame" x="26" y="286" width="274" height="75"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             <size key="cellSize" width="233" height="21"/>
@@ -107,13 +107,6 @@
                                                         <font key="font" metaFont="system"/>
                                                         <connections>
                                                             <binding destination="-2" name="value" keyPath="shouldStartAtLogin" id="834"/>
-                                                        </connections>
-                                                    </buttonCell>
-                                                    <buttonCell type="check" title="Automatically Check For Updates" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="65">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                        <connections>
-                                                            <binding destination="69" name="value" keyPath="automaticallyChecksForUpdates" id="73"/>
                                                         </connections>
                                                     </buttonCell>
                                                     <buttonCell type="check" title="Include Window Drawers" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="820">
@@ -712,7 +705,6 @@
                 <outlet property="initialFirstResponder" destination="2" id="327"/>
             </connections>
         </window>
-        <customObject id="69" customClass="SUUpdater"/>
         <userDefaultsController representsSharedInstance="YES" id="191"/>
     </objects>
     <resources>

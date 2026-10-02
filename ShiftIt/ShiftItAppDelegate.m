@@ -17,8 +17,6 @@
  
  */
 
-#import <Sparkle/Sparkle.h>
-#import "SBSystemPreferences.h"
 #import "ShiftItAppDelegate.h"
 #import "ShiftItApp.h"
 #import "WindowGeometryShiftItAction.h"
@@ -76,6 +74,10 @@ NSInteger const kMaxNumberOfTries = 20;
 // error related
 NSString *const SIAErrorDomain = @"org.shiftitapp.app.error";
 
+NSString *const kShiftItReleasesURL = @"https://github.com/idkhanhvo272/ShiftIt/releases";
+
+static NSString *const kAccessibilitySettingsURL = @"x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility";
+
 const CFAbsoluteTime kMinimumTimeBetweenActionInvocations = 0.25; // in seconds
 
 // TODO: move to the class
@@ -92,8 +94,6 @@ NSDictionary *allShiftActions = nil;
 - (void)increment:(NSString *)key;
 
 - (void)saveToFile:(NSString *)path;
-
-- (NSArray *)toSparkle;
 
 @end
 
@@ -166,17 +166,6 @@ NSDictionary *allShiftActions = nil;
         FMTLogError(@"Unable to serialize usage statistics to: %@ - %@", path, errorDesc);
     }
 }
-
-
-- (NSArray *)toSparkle {
-    NSMutableArray *a = [NSMutableArray array];
-
-    [statistics_ enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
-        [a addObject:FMTEncodeForSparkle(key, value, key, value)];
-    }];
-
-    return [NSArray arrayWithArray:a];
-}
 @end
 
 @implementation ShiftItAction
@@ -222,7 +211,7 @@ NSDictionary *allShiftActions = nil;
 
 @interface ShiftItAppDelegate ()
 
-- (void)checkAuthorization;
+- (BOOL)checkAuthorization;
 
 - (void)initializeActions_;
 
@@ -316,86 +305,115 @@ NSDictionary *allShiftActions = nil;
     }
 }
 
-- (void)checkAuthorization {
-    // TODO: move to driver
-    if (!AXIsProcessTrusted()) {
-        FMTLogInfo(@"ShiftIt not is authorized");
+// AXIsProcessTrusted() caches its answer, so a process that started without access keeps getting NO after
+// the user grants it. A freshly spawned copy of ShiftIt is attributed to this app and answers correctly.
+static BOOL SIAccessibilityGranted(void) {
+    NSTask *task = [[[NSTask alloc] init] autorelease];
+    [task setExecutableURL:[[NSBundle mainBundle] executableURL]];
+    [task setArguments:@[@"--check-accessibility"]];
+    if (![task launchAndReturnError:nil]) {
+        return AXIsProcessTrusted();
+    }
+    [task waitUntilExit];
+    return [task terminationStatus] == 0;
+}
 
-        if (AXIsProcessTrustedWithOptions != NULL) {
-            // OSX >= 10.9
-
-            NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Authorization Required", nil)
-                                             defaultButton:NSLocalizedString(@"Recheck", nil)
-                                           alternateButton:NSLocalizedString(@"Open System Preferences", nil)
-                                               otherButton:NSLocalizedString(@"Quit", nil)
-                                 informativeTextWithFormat:NSLocalizedString(@"AUTHORIZATION_INFORMATIVE_TEXT_10_9", nil)
-            ];
-
-            NSImageView *accessory = [[[NSImageView alloc] initWithFrame:NSMakeRect(0, 0, 300, 234)] autorelease];
-            [accessory setImage:[NSImage imageNamed:@"AccessibilitySettingsMaverick"]];
-            [accessory setImageFrameStyle:NSImageFrameGrayBezel];
-            [alert setAccessoryView:accessory];
-
-            BOOL recheck = true;
-            while (recheck) {
-                switch ([alert runModal]) {
-                    case NSAlertDefaultReturn:
-                        recheck = !AXIsProcessTrusted();
-                        break;
-                    case NSAlertOtherReturn:
-                        [NSApp terminate:self];
-                        break;
-                    case NSAlertAlternateReturn: {
-
-                        // this should hopefully add it to the list so user can only click on the checkbox
-                        NSDictionary *options = @{(id) kAXTrustedCheckOptionPrompt : @NO};
-                        AXIsProcessTrustedWithOptions((CFDictionaryRef) options);
-
-                        SBSystemPreferencesApplication *prefs = [SBApplication applicationWithBundleIdentifier:@"com.apple.systempreferences"];
-                        [prefs activate];
-
-                        SBSystemPreferencesPane *pane = [[prefs panes] find:^BOOL(SBSystemPreferencesPane *elem) {
-                            return [[elem id] isEqualToString:@"com.apple.preference.security"];
-                        }];
-                        SBSystemPreferencesAnchor *anchor = [[pane anchors] find:^BOOL(SBSystemPreferencesAnchor *elem) {
-                            return [[elem name] isEqualToString:@"Privacy_Accessibility"];
-                        }];
-
-                        [anchor reveal];
-                    }
-                        break;
-                    default:
-                        break;
-                }
-
-            }
-        } else {
-            // OSX <= 10.8
-            NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Authorization Required", nil)
-                                             defaultButton:NSLocalizedString(@"Quit", nil)
-                                           alternateButton:nil
-                                               otherButton:NSLocalizedString(@"Open System Preferences", nil)
-                                 informativeTextWithFormat:NSLocalizedString(@"AUTHORIZATION_INFORMATIVE_TEXT_10_8", nil)
-            ];
-
-            NSImageView *accessory = [[[NSImageView alloc] initWithFrame:NSMakeRect(0, 0, 300, 234)] autorelease];
-            [accessory setImage:[NSImage imageNamed:@"AccessibilitySettingsLion"]];
-            [accessory setImageFrameStyle:NSImageFrameGrayBezel];
-            [alert setAccessoryView:accessory];
-
-            if ([alert runModal] == NSAlertOtherReturn) {
-                [[NSWorkspace sharedWorkspace] openFile:@"/System/Library/PreferencePanes/UniversalAccessPref.prefPane"];
-            }
-
-            [NSApp terminate:self];
+- (BOOL)waitForAccessibility_:(NSTimeInterval)timeout {
+    NSDate *deadline = [NSDate dateWithTimeIntervalSinceNow:timeout];
+    while ([deadline timeIntervalSinceNow] > 0) {
+        if (SIAccessibilityGranted()) {
+            return YES;
+        }
+        // keep handling events so the app stays responsive while the user is in System Settings
+        NSDate *next = [NSDate dateWithTimeIntervalSinceNow:1];
+        NSEvent *event;
+        while ((event = [NSApp nextEventMatchingMask:NSEventMaskAny untilDate:next inMode:NSDefaultRunLoopMode dequeue:YES])) {
+            [NSApp sendEvent:event];
         }
     }
+    return NO;
+}
+
+- (void)relaunch_ {
+    NSWorkspaceOpenConfiguration *configuration = [NSWorkspaceOpenConfiguration configuration];
+    [configuration setCreatesNewApplicationInstance:YES];
+    [configuration setActivates:NO];
+    [[NSWorkspace sharedWorkspace] openApplicationAtURL:[[NSBundle mainBundle] bundleURL]
+                                          configuration:configuration
+                                      completionHandler:^(NSRunningApplication *app, NSError *error) {
+        if (error) {
+            FMTLogError(@"Unable to relaunch ShiftIt: %@", error);
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [NSApp terminate:nil];
+        });
+    }];
+}
+
+/**
+ * @returns YES when ShiftIt can control windows, NO when it is quitting or relaunching itself.
+ */
+- (BOOL)checkAuthorization {
+    // TODO: move to driver
+    if (AXIsProcessTrusted()) {
+        return YES;
+    }
+
+    FMTLogInfo(@"ShiftIt not is authorized");
+
+    NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+    [alert setMessageText:NSLocalizedString(@"Authorization Required", nil)];
+    [alert setInformativeText:NSLocalizedString(@"AUTHORIZATION_INFORMATIVE_TEXT", nil)];
+    [alert addButtonWithTitle:NSLocalizedString(@"Open System Settings", nil)];
+    [alert addButtonWithTitle:NSLocalizedString(@"Quit", nil)];
+
+    // dismisses the alert as soon as access is granted, no need to come back to it
+    NSTimer *poll = [NSTimer timerWithTimeInterval:1.0 repeats:YES block:^(NSTimer *timer) {
+        if (SIAccessibilityGranted()) {
+            [NSApp abortModal];
+        }
+    }];
+    [[NSRunLoop currentRunLoop] addTimer:poll forMode:NSModalPanelRunLoopMode];
+
+    BOOL granted = NO;
+    BOOL firstTime = YES;
+    while (!granted) {
+        if (firstTime) {
+            // ShiftIt is an agent app so the alert would otherwise open behind the active window;
+            // later reminders must not steal the keyboard focus from whatever the user is doing
+            [NSApp activateIgnoringOtherApps:YES];
+            firstTime = NO;
+        }
+
+        NSModalResponse response = [alert runModal];
+        if (response == NSModalResponseAbort) {
+            granted = YES;
+        } else if (response == NSAlertFirstButtonReturn) {
+            // lists ShiftIt in System Settings so only its switch has to be turned on
+            NSDictionary *options = @{(id) kAXTrustedCheckOptionPrompt : @YES};
+            AXIsProcessTrustedWithOptions((CFDictionaryRef) options);
+            [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:kAccessibilitySettingsURL]];
+
+            granted = [self waitForAccessibility_:120];
+        } else {
+            [poll invalidate];
+            [NSApp terminate:self];
+            return NO;
+        }
+    }
+
+    [poll invalidate];
+    FMTLogInfo(@"ShiftIt has been authorized, relaunching");
+    [self relaunch_];
+    return NO;
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     FMTLogDebug(@"Starting up ShiftIt...");
 
-    [self checkAuthorization];
+    if (![self checkAuthorization]) {
+        return;
+    }
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
@@ -725,27 +743,8 @@ NSDictionary *allShiftActions = nil;
     [self invokeShiftItActionByIdentifier_:identifier];
 }
 
-// This method allows you to add extra parameters to the appcast URL,
-// potentially based on whether or not Sparkle will also be sending along
-// the system profile. This method should return an array of dictionaries
-// with keys: "key", "value", "displayKey", "displayValue", the latter two
-// being human-readable variants of the former two.
-- (NSArray *)feedParametersForUpdater:(SUUpdater *)updater
-                 sendingSystemProfile:(BOOL)sendingProfile {
-    NSMutableArray *a = [NSMutableArray arrayWithArray:[usageStatistics_ toSparkle]];
-
-    // get display information
-    NSArray *screens = [NSScreen screens];
-    NSInteger nScreen = [screens count];
-    [a addObject:FMTEncodeForSparkle(@"n_screens", FMTStr(@"%d", nScreen), @"Number of screens", FMTStr(@"%d", nScreen))];
-
-    for (NSUInteger i = 0; i < nScreen; i++) {
-        NSString *resolution = RECT_STR([[screens objectAtIndex:i] frame]);
-        [a addObject:FMTEncodeForSparkle(FMTStr(@"screen_%d", i), resolution, FMTStr(@"Screen #%d resolution", i), resolution)];
-    }
-
-    return [NSArray arrayWithArray:a];
+- (IBAction)checkForUpdates:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:kShiftItReleasesURL]];
 }
-
 
 @end

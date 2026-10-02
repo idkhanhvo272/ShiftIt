@@ -22,5 +22,10 @@
 
 int main(int argc, char *argv[])
 {
+    // see SIAccessibilityGranted() in ShiftItAppDelegate.m
+    if (argc > 1 && strcmp(argv[1], "--check-accessibility") == 0) {
+        return AXIsProcessTrusted() ? 0 : 1;
+    }
+
     return NSApplicationMain(argc,  (const char **) argv);
 }

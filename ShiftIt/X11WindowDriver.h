@@ -17,6 +17,8 @@
 
  */
 
+#ifdef X11
+
 // make sure this does not collide with the Cursor from Carbon/Cocoa
 #define Cursor X11Cursor
 #import <X11/Xlib.h>
@@ -34,3 +36,5 @@
 - (id)initWithError:(NSError **)error;
 
 @end
+
+#endif

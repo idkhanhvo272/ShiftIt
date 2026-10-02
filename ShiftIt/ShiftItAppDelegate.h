@@ -29,5 +29,6 @@
 }
 
 - (IBAction)showPreferences:(id)sender;
+- (IBAction)checkForUpdates:(id)sender;
 
 @end

@@ -70,6 +70,8 @@ extern NSString *const kSIMenuItemTitle;
 
 extern NSString *const SIAErrorDomain;
 
+extern NSString *const kShiftItReleasesURL;
+
 @interface ShiftItAction : NSObject {
  @private
 	NSString *identifier_;

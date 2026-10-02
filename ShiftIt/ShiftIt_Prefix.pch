@@ -20,3 +20,8 @@
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
 #endif
+
+// X11 support is compiled in only when XQuartz headers are available; libX11 is loaded at runtime.
+#if defined(X11) && !__has_include(<X11/Xlib.h>)
+    #undef X11
+#endif

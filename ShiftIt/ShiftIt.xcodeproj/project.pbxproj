@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02088BA7C3CC6DBD7EE4B8AC /* AXWindowDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = 270DACA314094B9E0080DFBD /* AXWindowDriver.m */; };
+		024CD59CE08CFF7F56169F06 /* GTMLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 270DACA814098AE30080DFBD /* GTMLogger.m */; };
+		0485BAEC56AF6085C3666C4E /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE5B39D302152640F71FF5 /* SRRecorderControl.m */; };
+		0E6F52C3883555CCA7E379DB /* FMTError.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BCF6EB42F45803C08BAC36 /* FMTError.m */; };
+		156A097B01E7851007A2376B /* SRRecorderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF7AF1AB609F1053F67A078 /* SRRecorderCell.m */; };
+		18382D4DBDCF838EE60ECD21 /* SRCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED3641F41C363B936ADB912 /* SRCommon.m */; };
+		1C39E9FA4356CDE55AE8ACFD /* SRKeyCodeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 273DF6F491570B50583C4079 /* SRKeyCodeTransformer.m */; };
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		238BC5430AA79512E980AFA6 /* SRRecorderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF7AF1AB609F1053F67A078 /* SRRecorderCell.m */; };
 		256AC3DA0F4B6AC300CF3369 /* ShiftItAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* ShiftItAppDelegate.m */; };
 		2708BF121260E5BB00192883 /* DefaultShiftItActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2708BF111260E5BB00192883 /* DefaultShiftItActions.m */; };
 		270DACA414094B9E0080DFBD /* AXWindowDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = 270DACA314094B9E0080DFBD /* AXWindowDriver.m */; };
@@ -38,35 +46,13 @@
 		27160C6616C939FF002DA475 /* FMTNSError+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 2717BE38149935EC0012EF87 /* FMTNSError+Extras.m */; };
 		27160C6716C939FF002DA475 /* FMTGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DC61EF1127C862000E1A67 /* FMTGeometry.m */; };
 		27160C6816C939FF002DA475 /* FMTNSFileManager+DirectoryLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DC61EF1127C862000E1A6C /* FMTNSFileManager+DirectoryLocations.m */; };
-		27160C6A16C939FF002DA475 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A14D7F1269CCA200E68263 /* ShortcutRecorder.framework */; };
-		27160C6B16C939FF002DA475 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2708222117FCF9400C0A04C /* Sparkle.framework */; };
 		27160C6C16C939FF002DA475 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2DC61EE1127C862000E1A5B /* Carbon.framework */; };
 		27160C6D16C939FF002DA475 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		27160C6F16C939FF002DA475 /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27A14D7F1269CCA200E68263 /* ShortcutRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		27160C7016C939FF002DA475 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F2708222117FCF9400C0A04C /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		2717BDAC1498B7FD0012EF87 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2714C0B21487F9BC00CC951D /* SenTestingKit.framework */; };
-		2717BE18149933530012EF87 /* GTMLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 270DACA814098AE30080DFBD /* GTMLogger.m */; };
-		2717BE1F149933840012EF87 /* SIAdjacentRectangles.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DC61EF1127C862000E1A5F /* SIAdjacentRectangles.m */; };
-		2717BE29149933E70012EF87 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2717BE28149933E70012EF87 /* Carbon.framework */; };
-		2717BE2B149933EE0012EF87 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2717BE2A149933EE0012EF87 /* Cocoa.framework */; };
 		2717BE39149935EC0012EF87 /* FMTNSArray+Functional.m in Sources */ = {isa = PBXBuildFile; fileRef = 2717BE36149935EB0012EF87 /* FMTNSArray+Functional.m */; };
-		2717BE3A149935EC0012EF87 /* FMTNSArray+Functional.m in Sources */ = {isa = PBXBuildFile; fileRef = 2717BE36149935EB0012EF87 /* FMTNSArray+Functional.m */; };
 		2717BE3B149935EC0012EF87 /* FMTNSError+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 2717BE38149935EC0012EF87 /* FMTNSError+Extras.m */; };
-		2717BEAC14994C120012EF87 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2714C0B21487F9BC00CC951D /* SenTestingKit.framework */; };
-		2717BEAE14994C120012EF87 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2717BEAD14994C120012EF87 /* Cocoa.framework */; };
-		2717BEBA14994C120012EF87 /* FMTGeometryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2717BEB914994C120012EF87 /* FMTGeometryTests.m */; };
-		2717BEBF14994CAE0012EF87 /* FMTGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DC61EF1127C862000E1A67 /* FMTGeometry.m */; };
 		271D2EBB12FC6B3A00A4D0BF /* margin-background-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 271D2EB912FC6B3A00A4D0BF /* margin-background-image.png */; };
 		2743F1AB140F048B00C23A67 /* WindowGeometryShiftItAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 2743F1AA140F048B00C23A67 /* WindowGeometryShiftItAction.m */; };
-		274B4CD719364F1E00C0A8C1 /* AccessibilitySettingsMaverick.png in Resources */ = {isa = PBXBuildFile; fileRef = 274B4CD619364F1E00C0A8C1 /* AccessibilitySettingsMaverick.png */; };
-		274B4CD819364F1E00C0A8C1 /* AccessibilitySettingsMaverick.png in Resources */ = {isa = PBXBuildFile; fileRef = 274B4CD619364F1E00C0A8C1 /* AccessibilitySettingsMaverick.png */; };
 		27904A531460C6C300E5AEAD /* X11WindowDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F4687D141C2238001209F6 /* X11WindowDriver.m */; };
-		279AF80F19432F6F0048FE5F /* AccessibilitySettingsLion.png in Resources */ = {isa = PBXBuildFile; fileRef = 279AF80E19432F6F0048FE5F /* AccessibilitySettingsLion.png */; };
-		279AF81019432F6F0048FE5F /* AccessibilitySettingsLion.png in Resources */ = {isa = PBXBuildFile; fileRef = 279AF80E19432F6F0048FE5F /* AccessibilitySettingsLion.png */; };
-		279AF8191943675F0048FE5F /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 279AF8181943675F0048FE5F /* ScriptingBridge.framework */; };
-		279AF81A194367670048FE5F /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 279AF8181943675F0048FE5F /* ScriptingBridge.framework */; };
-		27A14DB41269CD4200E68263 /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27A14D7F1269CCA200E68263 /* ShortcutRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		27A14DD31269CE5600E68263 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A14D7F1269CCA200E68263 /* ShortcutRecorder.framework */; };
 		27A14EC01269EC1500E68263 /* ShiftIt-defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27A14EBF1269EC1500E68263 /* ShiftIt-defaults.plist */; };
 		27C072E1140D6B9E00C4E199 /* FMTNSDictionary+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C072E0140D6B9E00C4E199 /* FMTNSDictionary+Extras.m */; };
 		27C072E4140D981E00C4E199 /* FMTNSDate+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C072E3140D981E00C4E199 /* FMTNSDate+Extras.m */; };
@@ -77,78 +63,64 @@
 		27F4FD4D12730F2F00A65750 /* FMTHotKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F4FD4A12730F2F00A65750 /* FMTHotKeyManager.m */; };
 		27F4FD5612730F4600A65750 /* FMTLoginItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F4FD5312730F4600A65750 /* FMTLoginItems.m */; };
 		27F4FD5712730F4600A65750 /* FMTUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F4FD5512730F4600A65750 /* FMTUtils.m */; };
+		2BDB1A9D0F119B1230259D26 /* FMTNSDate+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C072E3140D981E00C4E199 /* FMTNSDate+Extras.m */; };
+		342E14277F898B0C783CD102 /* WindowGeometryShiftItAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 2743F1AA140F048B00C23A67 /* WindowGeometryShiftItAction.m */; };
+		3D99A755D38F57AE599F756F /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2A5E5B4F3EB7FC6335443E /* ServiceManagement.framework */; };
+		4B92F1EC4D296B46B727FC89 /* SIAdjacentRectangles.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DC61EF1127C862000E1A5F /* SIAdjacentRectangles.m */; };
+		5EA3410E3EC8CA1F4CFA2FB2 /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2520B631133874D00DB826F /* PreferencesWindowController.m */; };
+		622B1F1AF1B91C7957ECFEE2 /* SRKeyCodeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 273DF6F491570B50583C4079 /* SRKeyCodeTransformer.m */; };
+		626711523F02C4893A8DB591 /* SIScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DC61EF1127C862000E1A5C /* SIScreen.m */; };
+		6510B087FE625D234FF9E4CA /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B032696B4ABE7E99AFDBE601 /* Carbon.framework */; };
+		660B0D67FE31F9514CBB66FD /* SRCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED3641F41C363B936ADB912 /* SRCommon.m */; };
+		6CB560AB287FE0E205398E80 /* FMTNSError+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 2717BE38149935EC0012EF87 /* FMTNSError+Extras.m */; };
+		6CF14E8286BC403AE26A63BC /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE5B39D302152640F71FF5 /* SRRecorderControl.m */; };
+		6EDC1B09ADE77702B2CF4050 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB990A79D4B4450A22E7408 /* Cocoa.framework */; };
+		6FE1D1CDB084BCE663F7BC99 /* SIAdjacentRectanglesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF1AC50D1A577928A999D2E /* SIAdjacentRectanglesTest.m */; };
+		714DC7A7293DE874BFE576A2 /* FMTHotKeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F4FD4A12730F2F00A65750 /* FMTHotKeyManager.m */; };
+		7FADE3EB214B8976C3E5B26B /* SIWindowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DC61241127ACDE000E1A5B /* SIWindowManager.m */; };
 		83E55ED6125A5FCF00FC49BF /* ShiftIt.icns in Resources */ = {isa = PBXBuildFile; fileRef = 83E55ED4125A5FCF00FC49BF /* ShiftIt.icns */; };
+		883BF9539C1B473D8F576DC6 /* FMTHotKey+SRKeyCombo.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F4FD4812730F2F00A65750 /* FMTHotKey+SRKeyCombo.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		8E615BAFE2C055F0F7204557 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2A5E5B4F3EB7FC6335443E /* ServiceManagement.framework */; };
+		975C0C597C170E4578F5DA7B /* FMTGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DC61EF1127C862000E1A67 /* FMTGeometry.m */; };
+		9938CF8A7C2F0FB29243AA97 /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = EA12F424356159D97E4CB021 /* SRValidator.m */; };
+		AD4E83D4574958DF8534564C /* DefaultShiftItActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2708BF111260E5BB00192883 /* DefaultShiftItActions.m */; };
+		AF9FF049A817F3C7B16345A0 /* SRCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED3641F41C363B936ADB912 /* SRCommon.m */; };
+		B40B3BE54D75412CC481F355 /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = EA12F424356159D97E4CB021 /* SRValidator.m */; };
+		B71582AAD126E7CBBD057EF6 /* SRKeyCodeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 273DF6F491570B50583C4079 /* SRKeyCodeTransformer.m */; };
+		BAF633A0130707CEB5424B12 /* ShiftItActionGeometryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE17B90A48D4072171A83CE /* ShiftItActionGeometryTests.m */; };
+		BDB7E357602D59CB5B66365F /* FMTLoginItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F4FD5312730F4600A65750 /* FMTLoginItems.m */; };
+		C1F0975314D8F9047B60A468 /* FMTNSFileManager+DirectoryLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DC61EF1127C862000E1A6C /* FMTNSFileManager+DirectoryLocations.m */; };
+		C72628E1B7E9AF71E84F2CA8 /* FMTNSArray+Functional.m in Sources */ = {isa = PBXBuildFile; fileRef = 2717BE36149935EB0012EF87 /* FMTNSArray+Functional.m */; };
+		C77D7704EB55E8513F0CCB6C /* ShiftItAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* ShiftItAppDelegate.m */; };
 		CA0A5412194C02ED00AC7F45 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA0A5410194C02ED00AC7F45 /* PreferencesWindow.xib */; };
 		CA0A5415194C030700AC7F45 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA0A5413194C030700AC7F45 /* Localizable.strings */; };
+		CA0DE0037CA8C990E111BDFA /* FMTHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F4FD4612730F2F00A65750 /* FMTHotKey.m */; };
+		CA17834FB2885ED7AB716190 /* FMTNSDictionary+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C072E0140D6B9E00C4E199 /* FMTNSDictionary+Extras.m */; };
 		CEDBD24B19576F1900CB5F35 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA0A5410194C02ED00AC7F45 /* PreferencesWindow.xib */; };
+		E02995C4B335387A36CCC96F /* SRRecorderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF7AF1AB609F1053F67A078 /* SRRecorderCell.m */; };
+		E47AB71D648B826B580A8E65 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2A5E5B4F3EB7FC6335443E /* ServiceManagement.framework */; };
 		E4BCF1FFDFE5D8200B19C785 /* FMTError.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BCF6EB42F45803C08BAC36 /* FMTError.m */; };
 		E4BCF238FB8ED2BD310B85A5 /* FMTError.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BCF6EB42F45803C08BAC36 /* FMTError.m */; };
-		E4BCFA70F241D179E2BE518D /* SIAdjacentRectanglesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BCF097E2A6742AD696580E /* SIAdjacentRectanglesTest.m */; };
-		E4BCFDB6E75A7E6EB81A454A /* FMTError.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BCF6EB42F45803C08BAC36 /* FMTError.m */; };
-		E4BCFDF71237154D17E7FFBC /* FMTError.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BCF6EB42F45803C08BAC36 /* FMTError.m */; };
+		E806821A22F38F436220CA2B /* FMTGeometryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F8019018CB3F1F890164D /* FMTGeometryTests.m */; };
 		F2520B641133874D00DB826F /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2520B631133874D00DB826F /* PreferencesWindowController.m */; };
-		F2708252117FCFEA00C0A04C /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2708222117FCF9400C0A04C /* Sparkle.framework */; };
-		F2708277117FE51100C0A04C /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F2708222117FCF9400C0A04C /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		F2DC61251127ACDE000E1A5B /* SIWindowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DC61241127ACDE000E1A5B /* SIWindowManager.m */; };
 		F2DC61EF1127C862000E1A5B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2DC61EE1127C862000E1A5B /* Carbon.framework */; };
 		F2DC61EF1127C862000E1A5D /* SIScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DC61EF1127C862000E1A5C /* SIScreen.m */; };
 		F2DC61EF1127C862000E1A60 /* SIAdjacentRectangles.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DC61EF1127C862000E1A5F /* SIAdjacentRectangles.m */; };
 		F2DC61EF1127C862000E1A68 /* FMTGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DC61EF1127C862000E1A67 /* FMTGeometry.m */; };
-		F2DC61EF1127C862000E1A69 /* FMTGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DC61EF1127C862000E1A67 /* FMTGeometry.m */; };
 		F2DC61EF1127C862000E1A6D /* FMTNSFileManager+DirectoryLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DC61EF1127C862000E1A6C /* FMTNSFileManager+DirectoryLocations.m */; };
-		F2DC61EF1127C862000E1A6E /* FMTNSFileManager+DirectoryLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DC61EF1127C862000E1A6C /* FMTNSFileManager+DirectoryLocations.m */; };
-		F2DC61EF1127C862000E1A6F /* FMTNSFileManager+DirectoryLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DC61EF1127C862000E1A6C /* FMTNSFileManager+DirectoryLocations.m */; };
+		F72386AF499D7EBC93606949 /* SRRecorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE5B39D302152640F71FF5 /* SRRecorderControl.m */; };
+		FAAFEC6BCAF534B47BBEFBDA /* FMTUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F4FD5512730F4600A65750 /* FMTUtils.m */; };
+		FC122FFF0D51FBE95DEE7302 /* SRValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = EA12F424356159D97E4CB021 /* SRValidator.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		2717BDBC1498BAEC0012EF87 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8D1107260486CEB800E47090;
-			remoteInfo = ShiftIt;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		27160C6E16C939FF002DA475 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				27160C6F16C939FF002DA475 /* ShortcutRecorder.framework in CopyFiles */,
-				27160C7016C939FF002DA475 /* Sparkle.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		271CB7E7192C093800D633E6 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 6;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F270823F117FCFD600C0A04C /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				27A14DB41269CD4200E68263 /* ShortcutRecorder.framework in CopyFiles */,
-				F2708277117FE51100C0A04C /* Sparkle.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		0EBE5B39D302152640F71FF5 /* SRRecorderControl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SRRecorderControl.m; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		1E4280310D33EFB1B1C97082 /* SRRecorderControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SRRecorderControl.h; sourceTree = "<group>"; };
 		256AC3D80F4B6AC300CF3369 /* ShiftItAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShiftItAppDelegate.h; sourceTree = "<group>"; };
 		256AC3D90F4B6AC300CF3369 /* ShiftItAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShiftItAppDelegate.m; sourceTree = "<group>"; };
 		256AC3F00F4B6AF500CF3369 /* ShiftIt_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShiftIt_Prefix.pch; sourceTree = "<group>"; };
@@ -161,9 +133,7 @@
 		270DACA714098AE30080DFBD /* GTMLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMLogger.h; path = GTM/GTMLogger.h; sourceTree = "<group>"; };
 		270DACA814098AE30080DFBD /* GTMLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMLogger.m; path = GTM/GTMLogger.m; sourceTree = "<group>"; };
 		270DACAA14098B250080DFBD /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMDefines.h; path = GTM/GTMDefines.h; sourceTree = "<group>"; };
-		2714C0B21487F9BC00CC951D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		27160C7416C939FF002DA475 /* ShiftIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShiftIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2717BDAB1498B7FD0012EF87 /* ShiftIt Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ShiftIt Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2717BE28149933E70012EF87 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		2717BE2A149933EE0012EF87 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2717BE34149935EB0012EF87 /* FMT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMT.h; path = FMT/FMT.h; sourceTree = "<group>"; };
@@ -171,19 +141,15 @@
 		2717BE36149935EB0012EF87 /* FMTNSArray+Functional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FMTNSArray+Functional.m"; path = "FMT/FMTNSArray+Functional.m"; sourceTree = "<group>"; };
 		2717BE37149935EC0012EF87 /* FMTNSError+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FMTNSError+Extras.h"; path = "FMT/FMTNSError+Extras.h"; sourceTree = "<group>"; };
 		2717BE38149935EC0012EF87 /* FMTNSError+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FMTNSError+Extras.m"; path = "FMT/FMTNSError+Extras.m"; sourceTree = "<group>"; };
-		2717BEAB14994C120012EF87 /* FMT Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FMT Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2717BEAD14994C120012EF87 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2717BEAF14994C120012EF87 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		2717BEB014994C120012EF87 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		2717BEB114994C120012EF87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		2717BEB414994C120012EF87 /* FMT Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FMT Tests-Info.plist"; sourceTree = "<group>"; };
-		2717BEB914994C120012EF87 /* FMTGeometryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMTGeometryTests.m; sourceTree = "<group>"; };
-		2717BEBB14994C120012EF87 /* FMT Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FMT Tests-Prefix.pch"; sourceTree = "<group>"; };
 		271D2EB912FC6B3A00A4D0BF /* margin-background-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "margin-background-image.png"; sourceTree = "<group>"; };
+		273DF6F491570B50583C4079 /* SRKeyCodeTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SRKeyCodeTransformer.m; sourceTree = "<group>"; };
 		2743F1A2140EFC8E00C23A67 /* SIWindowDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIWindowDriver.h; sourceTree = "<group>"; };
 		2743F1A9140F048B00C23A67 /* WindowGeometryShiftItAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowGeometryShiftItAction.h; sourceTree = "<group>"; };
 		2743F1AA140F048B00C23A67 /* WindowGeometryShiftItAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowGeometryShiftItAction.m; sourceTree = "<group>"; };
-		274B4CD619364F1E00C0A8C1 /* AccessibilitySettingsMaverick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AccessibilitySettingsMaverick.png; sourceTree = "<group>"; };
 		27632BC919535F04000445C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PreferencesWindow.xib; sourceTree = "<group>"; };
 		27632BCA19535F04000445C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		27632BCB19535F87000445C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -191,10 +157,6 @@
 		27632BD1195364EB000445C5 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/PreferencesWindow.strings; sourceTree = "<group>"; };
 		27632BD2195364EB000445C5 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		27632BD3195364EB000445C5 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		279AF80E19432F6F0048FE5F /* AccessibilitySettingsLion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AccessibilitySettingsLion.png; sourceTree = "<group>"; };
-		279AF8181943675F0048FE5F /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
-		279AF81B194367D10048FE5F /* SBSystemPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSystemPreferences.h; sourceTree = "<group>"; };
-		27A14D7F1269CCA200E68263 /* ShortcutRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShortcutRecorder.framework; sourceTree = "<group>"; };
 		27A14EBF1269EC1500E68263 /* ShiftIt-defaults.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "ShiftIt-defaults.plist"; sourceTree = "<group>"; };
 		27B4F46A192CFB2B00D35063 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		27B4F479192CFB4600D35063 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -218,18 +180,29 @@
 		27F4FD5412730F4600A65750 /* FMTUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMTUtils.h; path = FMT/FMTUtils.h; sourceTree = "<group>"; };
 		27F4FD5512730F4600A65750 /* FMTUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMTUtils.m; path = FMT/FMTUtils.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		386A07B21E96D45BF63B30B2 /* ShortcutRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ShortcutRecorder.h; sourceTree = "<group>"; };
+		58922124A4B81BA01CF95B3A /* SRCommon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SRCommon.h; sourceTree = "<group>"; };
+		5C5F8019018CB3F1F890164D /* FMTGeometryTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FMTGeometryTests.m; sourceTree = "<group>"; };
+		5DB990A79D4B4450A22E7408 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		83E55ED4125A5FCF00FC49BF /* ShiftIt.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ShiftIt.icns; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ShiftIt-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ShiftIt-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* ShiftIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShiftIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4BCF097E2A6742AD696580E /* SIAdjacentRectanglesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIAdjacentRectanglesTest.m; sourceTree = "<group>"; };
-		E4BCF1236CA369B89F718229 /* ShiftIt Tests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ShiftIt Tests-Prefix.pch"; sourceTree = "<group>"; };
+		8ED3641F41C363B936ADB912 /* SRCommon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SRCommon.m; sourceTree = "<group>"; };
+		8EEC7F60C5492FC3F881D450 /* SRValidator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SRValidator.h; sourceTree = "<group>"; };
+		987956F149F99A894E9B801E /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.txt; sourceTree = "<group>"; };
+		9EDDA2F1CA16C418237464D2 /* SRRecorderCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SRRecorderCell.h; sourceTree = "<group>"; };
+		AAF7AF1AB609F1053F67A078 /* SRRecorderCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SRRecorderCell.m; sourceTree = "<group>"; };
+		AB131481E8BD85F8D5595DD9 /* SRKeyCodeTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SRKeyCodeTransformer.h; sourceTree = "<group>"; };
+		B032696B4ABE7E99AFDBE601 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/Carbon.framework; sourceTree = DEVELOPER_DIR; };
+		DAE17B90A48D4072171A83CE /* ShiftItActionGeometryTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ShiftItActionGeometryTests.m; sourceTree = "<group>"; };
 		E4BCF6EB42F45803C08BAC36 /* FMTError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMTError.m; sourceTree = "<group>"; };
-		E4BCFB1C9BBC395A7C77D3BB /* ShiftIt Tests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = "ShiftIt Tests-Info.plist"; sourceTree = "<group>"; };
 		E4BCFC0DE2CE260FCDB4481E /* FMTError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMTError.h; sourceTree = "<group>"; };
 		E4BCFDA13E39F7928BBEC389 /* ShiftItConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShiftItConstants.h; sourceTree = "<group>"; };
+		EA12F424356159D97E4CB021 /* SRValidator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SRValidator.m; sourceTree = "<group>"; };
+		EAF1AC50D1A577928A999D2E /* SIAdjacentRectanglesTest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SIAdjacentRectanglesTest.m; sourceTree = "<group>"; };
+		ED006302D8CAD52B64D2BAA4 /* ShiftItTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShiftItTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2520B621133874D00DB826F /* PreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesWindowController.h; sourceTree = "<group>"; };
 		F2520B631133874D00DB826F /* PreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesWindowController.m; sourceTree = "<group>"; };
-		F2708222117FCF9400C0A04C /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		F2DC61231127ACDE000E1A5B /* SIWindowManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIWindowManager.h; sourceTree = "<group>"; };
 		F2DC61241127ACDE000E1A5B /* SIWindowManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIWindowManager.m; sourceTree = "<group>"; };
 		F2DC61EE1127C862000E1A5B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
@@ -246,6 +219,7 @@
 		F2DC61EF1127C862000E1A6A /* FMTGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMTGeometry.h; sourceTree = "<group>"; };
 		F2DC61EF1127C862000E1A6B /* FMTNSFileManager+DirectoryLocations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FMTNSFileManager+DirectoryLocations.h"; path = "FMT/FMTNSFileManager+DirectoryLocations.h"; sourceTree = "<group>"; };
 		F2DC61EF1127C862000E1A6C /* FMTNSFileManager+DirectoryLocations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FMTNSFileManager+DirectoryLocations.m"; path = "FMT/FMTNSFileManager+DirectoryLocations.m"; sourceTree = "<group>"; };
+		FE2A5E5B4F3EB7FC6335443E /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/ServiceManagement.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,30 +227,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				279AF81A194367670048FE5F /* ScriptingBridge.framework in Frameworks */,
-				27160C6A16C939FF002DA475 /* ShortcutRecorder.framework in Frameworks */,
-				27160C6B16C939FF002DA475 /* Sparkle.framework in Frameworks */,
 				27160C6C16C939FF002DA475 /* Carbon.framework in Frameworks */,
 				27160C6D16C939FF002DA475 /* Cocoa.framework in Frameworks */,
+				8E615BAFE2C055F0F7204557 /* ServiceManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2717BDA71498B7FD0012EF87 /* Frameworks */ = {
+		50F772010185B0C4C5566B05 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2717BE2B149933EE0012EF87 /* Cocoa.framework in Frameworks */,
-				2717BE29149933E70012EF87 /* Carbon.framework in Frameworks */,
-				2717BDAC1498B7FD0012EF87 /* SenTestingKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2717BEA714994C120012EF87 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2717BEAC14994C120012EF87 /* SenTestingKit.framework in Frameworks */,
-				2717BEAE14994C120012EF87 /* Cocoa.framework in Frameworks */,
+				6EDC1B09ADE77702B2CF4050 /* Cocoa.framework in Frameworks */,
+				6510B087FE625D234FF9E4CA /* Carbon.framework in Frameworks */,
+				E47AB71D648B826B580A8E65 /* ServiceManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,11 +247,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				279AF8191943675F0048FE5F /* ScriptingBridge.framework in Frameworks */,
-				27A14DD31269CE5600E68263 /* ShortcutRecorder.framework in Frameworks */,
-				F2708252117FCFEA00C0A04C /* Sparkle.framework in Frameworks */,
 				F2DC61EF1127C862000E1A5B /* Carbon.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				3D99A755D38F57AE599F756F /* ServiceManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,8 +278,6 @@
 				2717BE28149933E70012EF87 /* Carbon.framework */,
 				F2DC61EE1127C862000E1A5B /* Carbon.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
-				F2708222117FCF9400C0A04C /* Sparkle.framework */,
-				27A14D7F1269CCA200E68263 /* ShortcutRecorder.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -337,9 +296,8 @@
 			isa = PBXGroup;
 			children = (
 				8D1107320486CEB800E47090 /* ShiftIt.app */,
-				2717BDAB1498B7FD0012EF87 /* ShiftIt Tests.octest */,
-				2717BEAB14994C120012EF87 /* FMT Tests.octest */,
 				27160C7416C939FF002DA475 /* ShiftIt.app */,
+				ED006302D8CAD52B64D2BAA4 /* ShiftItTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -347,7 +305,6 @@
 		2708C1CC1261388A00192883 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				279AF81B194367D10048FE5F /* SBSystemPreferences.h */,
 				270DACA514098ACA0080DFBD /* GTM */,
 				2708C1CE126138A000192883 /* FMT */,
 			);
@@ -372,7 +329,6 @@
 			children = (
 				F2DC61EF1127C862000E1A6C /* FMTNSFileManager+DirectoryLocations.m */,
 				F2DC61EF1127C862000E1A6B /* FMTNSFileManager+DirectoryLocations.h */,
-				2717BEB214994C120012EF87 /* FMT Tests */,
 				F2DC61EF1127C862000E1A6A /* FMTGeometry.h */,
 				F2DC61EF1127C862000E1A67 /* FMTGeometry.m */,
 				2708C1CD1261389000192883 /* HotKey */,
@@ -405,24 +361,6 @@
 				270DACA814098AE30080DFBD /* GTMLogger.m */,
 			);
 			name = GTM;
-			sourceTree = "<group>";
-		};
-		2717BEB214994C120012EF87 /* FMT Tests */ = {
-			isa = PBXGroup;
-			children = (
-				2717BEB914994C120012EF87 /* FMTGeometryTests.m */,
-				2717BEB314994C120012EF87 /* Supporting Files */,
-			);
-			path = "FMT Tests";
-			sourceTree = "<group>";
-		};
-		2717BEB314994C120012EF87 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				2717BEB414994C120012EF87 /* FMT Tests-Info.plist */,
-				2717BEBB14994C120012EF87 /* FMT Tests-Prefix.pch */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		2743F1A3140EFCB300C23A67 /* ShiftIt Framework */ = {
@@ -484,7 +422,7 @@
 			name = X11Driver;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA /* ShiftIt */ = {
+		29B97314FDCFA39411CA2CEA = {
 			isa = PBXGroup;
 			children = (
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -492,6 +430,8 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				515D22735158547114FB9310 /* Vendor */,
+				43A34A77F78EAC997078F286 /* ShiftItTests */,
 			);
 			name = ShiftIt;
 			sourceTree = "<group>";
@@ -511,8 +451,6 @@
 				CA0A5413194C030700AC7F45 /* Localizable.strings */,
 				CA0A5410194C02ED00AC7F45 /* PreferencesWindow.xib */,
 				27CD1A2E19437FB20063D5AB /* ShiftItMenuIcon.png */,
-				279AF80E19432F6F0048FE5F /* AccessibilitySettingsLion.png */,
-				274B4CD619364F1E00C0A8C1 /* AccessibilitySettingsMaverick.png */,
 				271D2EB912FC6B3A00A4D0BF /* margin-background-image.png */,
 				27A14EBF1269EC1500E68263 /* ShiftIt-defaults.plist */,
 				83E55ED4125A5FCF00FC49BF /* ShiftIt.icns */,
@@ -526,34 +464,64 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				279AF8181943675F0048FE5F /* ScriptingBridge.framework */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
-				2714C0B21487F9BC00CC951D /* SenTestingKit.framework */,
 				2717BEAD14994C120012EF87 /* Cocoa.framework */,
 				27B4F46A192CFB2B00D35063 /* CoreFoundation.framework */,
 				27B4F479192CFB4600D35063 /* Foundation.framework */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
-				E4BCF4F74271515B995C0CF6 /* ShiftIt Tests */,
+				B077997C7284337034D6047D /* OS X */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E4BCF1E192B8E766772AAD42 /* Supporting Files */ = {
+		43A34A77F78EAC997078F286 /* ShiftItTests */ = {
 			isa = PBXGroup;
 			children = (
-				E4BCFB1C9BBC395A7C77D3BB /* ShiftIt Tests-Info.plist */,
-				E4BCF1236CA369B89F718229 /* ShiftIt Tests-Prefix.pch */,
+				5C5F8019018CB3F1F890164D /* FMTGeometryTests.m */,
+				EAF1AC50D1A577928A999D2E /* SIAdjacentRectanglesTest.m */,
+				DAE17B90A48D4072171A83CE /* ShiftItActionGeometryTests.m */,
 			);
-			name = "Supporting Files";
+			name = ShiftItTests;
+			path = ShiftItTests;
 			sourceTree = "<group>";
 		};
-		E4BCF4F74271515B995C0CF6 /* ShiftIt Tests */ = {
+		515D22735158547114FB9310 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				E4BCF097E2A6742AD696580E /* SIAdjacentRectanglesTest.m */,
-				E4BCF1E192B8E766772AAD42 /* Supporting Files */,
+				BFBB3260210EC29C81A568F8 /* ShortcutRecorder */,
 			);
-			path = "ShiftIt Tests";
+			name = Vendor;
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		B077997C7284337034D6047D /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				FE2A5E5B4F3EB7FC6335443E /* ServiceManagement.framework */,
+				5DB990A79D4B4450A22E7408 /* Cocoa.framework */,
+				B032696B4ABE7E99AFDBE601 /* Carbon.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		BFBB3260210EC29C81A568F8 /* ShortcutRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				987956F149F99A894E9B801E /* LICENSE.txt */,
+				58922124A4B81BA01CF95B3A /* SRCommon.h */,
+				8ED3641F41C363B936ADB912 /* SRCommon.m */,
+				AB131481E8BD85F8D5595DD9 /* SRKeyCodeTransformer.h */,
+				273DF6F491570B50583C4079 /* SRKeyCodeTransformer.m */,
+				9EDDA2F1CA16C418237464D2 /* SRRecorderCell.h */,
+				AAF7AF1AB609F1053F67A078 /* SRRecorderCell.m */,
+				1E4280310D33EFB1B1C97082 /* SRRecorderControl.h */,
+				0EBE5B39D302152640F71FF5 /* SRRecorderControl.m */,
+				8EEC7F60C5492FC3F881D450 /* SRValidator.h */,
+				EA12F424356159D97E4CB021 /* SRValidator.m */,
+				386A07B21E96D45BF63B30B2 /* ShortcutRecorder.h */,
+			);
+			name = ShortcutRecorder;
+			path = ShortcutRecorder;
 			sourceTree = "<group>";
 		};
 		F2D9C239112F9D0E003E9435 /* Preferences */ = {
@@ -575,7 +543,6 @@
 				27160C4916C939FF002DA475 /* Resources */,
 				27160C5216C939FF002DA475 /* Sources */,
 				27160C6916C939FF002DA475 /* Frameworks */,
-				27160C6E16C939FF002DA475 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -587,43 +554,6 @@
 			productReference = 27160C7416C939FF002DA475 /* ShiftIt.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2717BDAA1498B7FD0012EF87 /* ShiftIt Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2717BDB81498B7FD0012EF87 /* Build configuration list for PBXNativeTarget "ShiftIt Tests" */;
-			buildPhases = (
-				2717BDA61498B7FD0012EF87 /* Sources */,
-				2717BDA71498B7FD0012EF87 /* Frameworks */,
-				2717BDA81498B7FD0012EF87 /* Resources */,
-				2717BDA91498B7FD0012EF87 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2717BDBD1498BAEC0012EF87 /* PBXTargetDependency */,
-			);
-			name = "ShiftIt Tests";
-			productName = "ShiftIt Tests";
-			productReference = 2717BDAB1498B7FD0012EF87 /* ShiftIt Tests.octest */;
-			productType = "com.apple.product-type.bundle.ocunit-test";
-		};
-		2717BEAA14994C120012EF87 /* FMT Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2717BEBE14994C120012EF87 /* Build configuration list for PBXNativeTarget "FMT Tests" */;
-			buildPhases = (
-				2717BEA614994C120012EF87 /* Sources */,
-				2717BEA714994C120012EF87 /* Frameworks */,
-				2717BEA814994C120012EF87 /* Resources */,
-				2717BEA914994C120012EF87 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "FMT Tests";
-			productName = "FMT Tests";
-			productReference = 2717BEAB14994C120012EF87 /* FMT Tests.octest */;
-			productType = "com.apple.product-type.bundle.ocunit-test";
-		};
 		8D1107260486CEB800E47090 /* ShiftIt */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "ShiftIt" */;
@@ -631,8 +561,6 @@
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
-				F270823F117FCFD600C0A04C /* CopyFiles */,
-				271CB7E7192C093800D633E6 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -643,6 +571,23 @@
 			productName = ShiftIt;
 			productReference = 8D1107320486CEB800E47090 /* ShiftIt.app */;
 			productType = "com.apple.product-type.application";
+		};
+		BD0504BEA1359B4CF70FC26B /* ShiftItTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E35C449C44789E855493C5D /* Build configuration list for PBXNativeTarget "ShiftItTests" */;
+			buildPhases = (
+				B681A1EFBE8654818BC4BEE7 /* Sources */,
+				50F772010185B0C4C5566B05 /* Frameworks */,
+				552D7218A7512894D3C20DA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShiftItTests;
+			productName = ShiftItTests;
+			productReference = ED006302D8CAD52B64D2BAA4 /* ShiftItTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -666,14 +611,14 @@
 				ja,
 				Base,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA /* ShiftIt */;
+			mainGroup = 29B97314FDCFA39411CA2CEA;
+			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* ShiftIt */,
 				27160C4816C939FF002DA475 /* ShiftIt NoX11 */,
-				2717BDAA1498B7FD0012EF87 /* ShiftIt Tests */,
-				2717BEAA14994C120012EF87 /* FMT Tests */,
+				BD0504BEA1359B4CF70FC26B /* ShiftItTests */,
 			);
 		};
 /* End PBXProject section */
@@ -684,9 +629,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27160C4A16C939FF002DA475 /* InfoPlist.strings in Resources */,
-				274B4CD819364F1E00C0A8C1 /* AccessibilitySettingsMaverick.png in Resources */,
 				27CD1A3119437FB20063D5AB /* ShiftItMenuIcon.png in Resources */,
-				279AF81019432F6F0048FE5F /* AccessibilitySettingsLion.png in Resources */,
 				27160C4B16C939FF002DA475 /* MainMenu.xib in Resources */,
 				CEDBD24B19576F1900CB5F35 /* PreferencesWindow.xib in Resources */,
 				27160C4E16C939FF002DA475 /* ShiftIt.icns in Resources */,
@@ -695,14 +638,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2717BDA81498B7FD0012EF87 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2717BEA814994C120012EF87 /* Resources */ = {
+		552D7218A7512894D3C20DA7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -714,10 +650,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
-				274B4CD719364F1E00C0A8C1 /* AccessibilitySettingsMaverick.png in Resources */,
 				CA0A5415194C030700AC7F45 /* Localizable.strings in Resources */,
 				27CD1A3019437FB20063D5AB /* ShiftItMenuIcon.png in Resources */,
-				279AF80F19432F6F0048FE5F /* AccessibilitySettingsLion.png in Resources */,
 				CA0A5412194C02ED00AC7F45 /* PreferencesWindow.xib in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 				83E55ED6125A5FCF00FC49BF /* ShiftIt.icns in Resources */,
@@ -727,35 +661,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2717BDA91498B7FD0012EF87 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-		2717BEA914994C120012EF87 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		27160C5216C939FF002DA475 /* Sources */ = {
@@ -784,31 +689,11 @@
 				27160C6716C939FF002DA475 /* FMTGeometry.m in Sources */,
 				27160C6816C939FF002DA475 /* FMTNSFileManager+DirectoryLocations.m in Sources */,
 				E4BCF238FB8ED2BD310B85A5 /* FMTError.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2717BDA61498B7FD0012EF87 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2717BE18149933530012EF87 /* GTMLogger.m in Sources */,
-				2717BE1F149933840012EF87 /* SIAdjacentRectangles.m in Sources */,
-				2717BE3A149935EC0012EF87 /* FMTNSArray+Functional.m in Sources */,
-				F2DC61EF1127C862000E1A69 /* FMTGeometry.m in Sources */,
-				F2DC61EF1127C862000E1A6E /* FMTNSFileManager+DirectoryLocations.m in Sources */,
-				E4BCFA70F241D179E2BE518D /* SIAdjacentRectanglesTest.m in Sources */,
-				E4BCFDB6E75A7E6EB81A454A /* FMTError.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2717BEA614994C120012EF87 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2717BEBA14994C120012EF87 /* FMTGeometryTests.m in Sources */,
-				2717BEBF14994CAE0012EF87 /* FMTGeometry.m in Sources */,
-				F2DC61EF1127C862000E1A6F /* FMTNSFileManager+DirectoryLocations.m in Sources */,
-				E4BCFDF71237154D17E7FFBC /* FMTError.m in Sources */,
+				660B0D67FE31F9514CBB66FD /* SRCommon.m in Sources */,
+				622B1F1AF1B91C7957ECFEE2 /* SRKeyCodeTransformer.m in Sources */,
+				E02995C4B335387A36CCC96F /* SRRecorderCell.m in Sources */,
+				6CF14E8286BC403AE26A63BC /* SRRecorderControl.m in Sources */,
+				B40B3BE54D75412CC481F355 /* SRValidator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -839,18 +724,51 @@
 				F2DC61EF1127C862000E1A68 /* FMTGeometry.m in Sources */,
 				F2DC61EF1127C862000E1A6D /* FMTNSFileManager+DirectoryLocations.m in Sources */,
 				E4BCF1FFDFE5D8200B19C785 /* FMTError.m in Sources */,
+				AF9FF049A817F3C7B16345A0 /* SRCommon.m in Sources */,
+				1C39E9FA4356CDE55AE8ACFD /* SRKeyCodeTransformer.m in Sources */,
+				238BC5430AA79512E980AFA6 /* SRRecorderCell.m in Sources */,
+				F72386AF499D7EBC93606949 /* SRRecorderControl.m in Sources */,
+				FC122FFF0D51FBE95DEE7302 /* SRValidator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B681A1EFBE8654818BC4BEE7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C77D7704EB55E8513F0CCB6C /* ShiftItAppDelegate.m in Sources */,
+				7FADE3EB214B8976C3E5B26B /* SIWindowManager.m in Sources */,
+				5EA3410E3EC8CA1F4CFA2FB2 /* PreferencesWindowController.m in Sources */,
+				AD4E83D4574958DF8534564C /* DefaultShiftItActions.m in Sources */,
+				CA0DE0037CA8C990E111BDFA /* FMTHotKey.m in Sources */,
+				883BF9539C1B473D8F576DC6 /* FMTHotKey+SRKeyCombo.m in Sources */,
+				714DC7A7293DE874BFE576A2 /* FMTHotKeyManager.m in Sources */,
+				BDB7E357602D59CB5B66365F /* FMTLoginItems.m in Sources */,
+				FAAFEC6BCAF534B47BBEFBDA /* FMTUtils.m in Sources */,
+				02088BA7C3CC6DBD7EE4B8AC /* AXWindowDriver.m in Sources */,
+				024CD59CE08CFF7F56169F06 /* GTMLogger.m in Sources */,
+				CA17834FB2885ED7AB716190 /* FMTNSDictionary+Extras.m in Sources */,
+				2BDB1A9D0F119B1230259D26 /* FMTNSDate+Extras.m in Sources */,
+				342E14277F898B0C783CD102 /* WindowGeometryShiftItAction.m in Sources */,
+				626711523F02C4893A8DB591 /* SIScreen.m in Sources */,
+				4B92F1EC4D296B46B727FC89 /* SIAdjacentRectangles.m in Sources */,
+				C72628E1B7E9AF71E84F2CA8 /* FMTNSArray+Functional.m in Sources */,
+				6CB560AB287FE0E205398E80 /* FMTNSError+Extras.m in Sources */,
+				975C0C597C170E4578F5DA7B /* FMTGeometry.m in Sources */,
+				C1F0975314D8F9047B60A468 /* FMTNSFileManager+DirectoryLocations.m in Sources */,
+				0E6F52C3883555CCA7E379DB /* FMTError.m in Sources */,
+				18382D4DBDCF838EE60ECD21 /* SRCommon.m in Sources */,
+				B71582AAD126E7CBBD057EF6 /* SRKeyCodeTransformer.m in Sources */,
+				156A097B01E7851007A2376B /* SRRecorderCell.m in Sources */,
+				0485BAEC56AF6085C3666C4E /* SRRecorderControl.m in Sources */,
+				9938CF8A7C2F0FB29243AA97 /* SRValidator.m in Sources */,
+				E806821A22F38F436220CA2B /* FMTGeometryTests.m in Sources */,
+				6FE1D1CDB084BCE663F7BC99 /* SIAdjacentRectanglesTest.m in Sources */,
+				BAF633A0130707CEB5424B12 /* ShiftItActionGeometryTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		2717BDBD1498BAEC0012EF87 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8D1107260486CEB800E47090 /* ShiftIt */;
-			targetProxy = 2717BDBC1498BAEC0012EF87 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
@@ -891,17 +809,41 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1154DC0ADA85004F23D9ED42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "-";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ShiftIt_Prefix.pch;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Vendor",
+					"$(SRCROOT)/FMT",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.shiftitapp.ShiftItTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		27160C7216C939FF002DA475 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = .;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ShiftIt_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "_DEBUGPRINTS_=1";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Vendor",
+				);
 				INFOPLIST_FILE = "ShiftIt-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = org.shiftitapp.ShiftIt;
 				PRODUCT_NAME = ShiftIt;
 			};
 			name = Debug;
@@ -911,120 +853,59 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = .;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ShiftIt_Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Vendor",
+				);
 				INFOPLIST_FILE = "ShiftIt-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = org.shiftitapp.ShiftIt;
 				PRODUCT_NAME = ShiftIt;
 			};
 			name = Release;
 		};
-		2717BDB91498B7FD0012EF87 /* Debug */ = {
+		434D4802E6FAEABE10256DBD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-					"\"$(SRCROOT)\"",
-				);
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "-";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ShiftIt Tests/ShiftIt Tests-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
+				GCC_PREFIX_HEADER = ShiftIt_Prefix.pch;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)/Vendor",
+					"$(SRCROOT)/FMT",
 				);
-				INFOPLIST_FILE = "ShiftIt Tests/ShiftIt Tests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.shiftitapp.ShiftItTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
+				SDKROOT = macosx;
 			};
 			name = Debug;
-		};
-		2717BDBA1498B7FD0012EF87 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-					"\"$(SRCROOT)\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ShiftIt Tests/ShiftIt Tests-Prefix.pch";
-				INFOPLIST_FILE = "ShiftIt Tests/ShiftIt Tests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
-		2717BEBC14994C120012EF87 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FMT Tests/FMT Tests-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				INFOPLIST_FILE = "FMT Tests/FMT Tests-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		2717BEBD14994C120012EF87 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FMT Tests/FMT Tests-Prefix.pch";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				INFOPLIST_FILE = "FMT Tests/FMT Tests-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
 		};
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = .;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ShiftIt_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "_DEBUGPRINTS_=1";
 				HEADER_SEARCH_PATHS = (
-					/opt/local/include,
+					"$(inherited)",
+					"$(SRCROOT)/Vendor",
 					/opt/X11/include,
-					/usr/X11/include,
+					/opt/local/include,
 				);
 				INFOPLIST_FILE = "ShiftIt-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					/opt/local/lib,
-					/opt/X11/lib,
-					/usr/X11/lib,
-				);
 				OTHER_CFLAGS = (
 					"-DDEBUG",
 					"-DX11",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.shiftitapp.ShiftIt;
 				PRODUCT_NAME = ShiftIt;
 			};
 			name = Debug;
@@ -1034,24 +915,20 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = .;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ShiftIt_Prefix.pch;
 				HEADER_SEARCH_PATHS = (
-					/opt/local/include,
+					"$(inherited)",
+					"$(SRCROOT)/Vendor",
 					/opt/X11/include,
-					/usr/X11/include,
+					/opt/local/include,
 				);
 				INFOPLIST_FILE = "ShiftIt-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					/opt/local/lib,
-					/opt/X11/lib,
-					/usr/X11/lib,
-				);
 				OTHER_CFLAGS = (
 					"-DNDEBUG",
 					"-DX11",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.shiftitapp.ShiftIt;
 				PRODUCT_NAME = ShiftIt;
 			};
 			name = Release;
@@ -1059,10 +936,10 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
-				FRAMEWORK_SEARCH_PATHS = .;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
@@ -1080,15 +957,12 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IBC_OVERRIDING_PLUGINS_AND_FRAMEWORKS_DIR = "";
-				IBC_PLUGINS = ShortcutRecorder.framework/Versions/A/Resources/ShortcutRecorder.ibplugin;
-				IBC_PLUGIN_SEARCH_PATHS = "";
 				INSTALL_PATH = /Applications;
-				LD_RUNPATH_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DDEBUG";
 				OTHER_LDFLAGS = "-ldl";
+				SDKROOT = macosx;
 				WARNING_CFLAGS = "-Wall";
 			};
 			name = Debug;
@@ -1096,10 +970,10 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
-				FRAMEWORK_SEARCH_PATHS = .;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
@@ -1116,12 +990,12 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IBC_PLUGINS = ShortcutRecorder.framework/Versions/A/Resources/ShortcutRecorder.ibplugin;
 				INSTALL_PATH = /Applications;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNDEBUG";
 				OTHER_LDFLAGS = "-ldl";
+				SDKROOT = macosx;
 				WARNING_CFLAGS = "-Wall";
 			};
 			name = Release;
@@ -1129,29 +1003,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0E35C449C44789E855493C5D /* Build configuration list for PBXNativeTarget "ShiftItTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1154DC0ADA85004F23D9ED42 /* Release */,
+				434D4802E6FAEABE10256DBD /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		27160C7116C939FF002DA475 /* Build configuration list for PBXNativeTarget "ShiftIt NoX11" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				27160C7216C939FF002DA475 /* Debug */,
 				27160C7316C939FF002DA475 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2717BDB81498B7FD0012EF87 /* Build configuration list for PBXNativeTarget "ShiftIt Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2717BDB91498B7FD0012EF87 /* Debug */,
-				2717BDBA1498B7FD0012EF87 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2717BEBE14994C120012EF87 /* Build configuration list for PBXNativeTarget "FMT Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2717BEBC14994C120012EF87 /* Debug */,
-				2717BEBD14994C120012EF87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

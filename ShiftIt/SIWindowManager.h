@@ -22,6 +22,12 @@
 #import <Foundation/Foundation.h>
 #import "ShiftIt.h"
 
+/**
+ * Picks the window the user means from CGWindowListCopyWindowInfo entries ordered front to back.
+ * @returns the entry of the chosen window or nil when there is none.
+ */
+NSDictionary *SIFrontWindowInfo(NSArray *windowInfoList, pid_t frontmostPid);
+
 @interface SIWindowManager : NSObject {
  @private
     NSArray *drivers_;

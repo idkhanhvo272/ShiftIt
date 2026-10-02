@@ -96,6 +96,7 @@
 		C1F0975314D8F9047B60A468 /* FMTNSFileManager+DirectoryLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = F2DC61EF1127C862000E1A6C /* FMTNSFileManager+DirectoryLocations.m */; };
 		C72628E1B7E9AF71E84F2CA8 /* FMTNSArray+Functional.m in Sources */ = {isa = PBXBuildFile; fileRef = 2717BE36149935EB0012EF87 /* FMTNSArray+Functional.m */; };
 		C77D7704EB55E8513F0CCB6C /* ShiftItAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* ShiftItAppDelegate.m */; };
+		C7E4A7C09E40B7E729391360 /* SIFrontWindowInfoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B58CD4C32A7E332DBAB258BC /* SIFrontWindowInfoTests.m */; };
 		CA0A5412194C02ED00AC7F45 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA0A5410194C02ED00AC7F45 /* PreferencesWindow.xib */; };
 		CA0A5415194C030700AC7F45 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA0A5413194C030700AC7F45 /* Localizable.strings */; };
 		CA0DE0037CA8C990E111BDFA /* FMTHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F4FD4612730F2F00A65750 /* FMTHotKey.m */; };
@@ -195,6 +196,7 @@
 		AAF7AF1AB609F1053F67A078 /* SRRecorderCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SRRecorderCell.m; sourceTree = "<group>"; };
 		AB131481E8BD85F8D5595DD9 /* SRKeyCodeTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SRKeyCodeTransformer.h; sourceTree = "<group>"; };
 		B032696B4ABE7E99AFDBE601 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/Carbon.framework; sourceTree = DEVELOPER_DIR; };
+		B58CD4C32A7E332DBAB258BC /* SIFrontWindowInfoTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SIFrontWindowInfoTests.m; sourceTree = "<group>"; };
 		C2E60D9DF481A10136553872 /* FMTHotKeyTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FMTHotKeyTests.m; sourceTree = "<group>"; };
 		DAE17B90A48D4072171A83CE /* ShiftItActionGeometryTests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ShiftItActionGeometryTests.m; sourceTree = "<group>"; };
 		E4BCF6EB42F45803C08BAC36 /* FMTError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMTError.m; sourceTree = "<group>"; };
@@ -483,6 +485,7 @@
 				EAF1AC50D1A577928A999D2E /* SIAdjacentRectanglesTest.m */,
 				DAE17B90A48D4072171A83CE /* ShiftItActionGeometryTests.m */,
 				C2E60D9DF481A10136553872 /* FMTHotKeyTests.m */,
+				B58CD4C32A7E332DBAB258BC /* SIFrontWindowInfoTests.m */,
 			);
 			name = ShiftItTests;
 			path = ShiftItTests;
@@ -769,6 +772,7 @@
 				6FE1D1CDB084BCE663F7BC99 /* SIAdjacentRectanglesTest.m in Sources */,
 				BAF633A0130707CEB5424B12 /* ShiftItActionGeometryTests.m in Sources */,
 				97955A85FEE1909382C09CAF /* FMTHotKeyTests.m in Sources */,
+				C7E4A7C09E40B7E729391360 /* SIFrontWindowInfoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -76,6 +76,18 @@ NSInteger const kShiftItManagerFailureErrorCode = 2014;
 
 @end
 
+NSDictionary *SIFrontWindowInfo(NSArray *windowInfoList, pid_t frontmostPid) {
+    // filter only real windows - layer 0 - of the active app; the front most window across all displays
+    // can belong to another app, e.g. a full screen window on a second display
+    NSArray *windows = [windowInfoList filter:^BOOL(NSDictionary *item) {
+        return [[item objectForKey:(id)kCGWindowLayer] integerValue] == 0
+                && (frontmostPid <= 0 || [[item objectForKey:(id)kCGWindowOwnerPID] intValue] == frontmostPid);
+    }];
+
+    // get the first one - the front most window
+    return [windows count] > 0 ? [windows objectAtIndex:0] : nil;
+}
+
 #pragma mark Default Window Context
 
 @interface DefaultWindowContext : NSObject<SIWindowContext> {
@@ -131,17 +143,14 @@ NSInteger const kShiftItManagerFailureErrorCode = 2014;
     // get all windows order front to back
     NSArray *allWindowsInfoList = (NSArray *) CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly + kCGWindowListExcludeDesktopElements, 
                                                                       kCGNullWindowID);
-    // filter only real windows - layer 0
-    NSArray *windowInfoList = [allWindowsInfoList filter:^BOOL(NSDictionary *item) {
-        return [[item objectForKey:(id)kCGWindowLayer] integerValue] == 0;
-    }];
-    
-    // get the first one - the front most window
-    if ([windowInfoList count] == 0) {
+    pid_t frontmostPid = [[[NSWorkspace sharedWorkspace] frontmostApplication] processIdentifier];
+    NSDictionary *frontWindow = SIFrontWindowInfo(allWindowsInfoList, frontmostPid);
+
+    if (frontWindow == nil) {
         *error = SICreateError(kWindowManagerFailureErrorCode, @"Unable to find front window");
         return NO;        
     }
-    SIWindowInfo *frontWindowInfo = [SIWindowInfo windowInfoFromCGWindowInfoDictionary:[windowInfoList objectAtIndex:0]];
+    SIWindowInfo *frontWindowInfo = [SIWindowInfo windowInfoFromCGWindowInfoDictionary:frontWindow];
     
     // extract properties
     

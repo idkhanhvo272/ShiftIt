@@ -173,7 +173,7 @@
                                                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                         <tableColumns>
-                                                            <tableColumn identifier="" width="116" minWidth="40" maxWidth="1000" id="jfi-Ey-cpD">
+                                                            <tableColumn identifier="" width="140" minWidth="40" maxWidth="1000" id="jfi-Ey-cpD">
                                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                                                     <font key="font" metaFont="smallSystem"/>
                                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -206,7 +206,7 @@
                                                                     </tableCellView>
                                                                 </prototypeCellViews>
                                                             </tableColumn>
-                                                            <tableColumn identifier="" width="196" minWidth="40" maxWidth="1000" id="xUe-4S-V3z">
+                                                            <tableColumn identifier="" width="172" minWidth="40" maxWidth="1000" id="xUe-4S-V3z">
                                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                                                     <font key="font" metaFont="smallSystem"/>
                                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>

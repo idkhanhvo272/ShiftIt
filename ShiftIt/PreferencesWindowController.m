@@ -249,6 +249,9 @@ static NSString *hotkeyIdentifiers[] = {
     if (tableColumn == hotkeyLabelColumn_) {
         NSTextField* text = [[NSTextField alloc] initWithFrame:tableView.frame];
         text.alignment = NSRightTextAlignment;
+        // a wrapped label only shows its first line, e.g. "Center Third Bottom" would read "Center Third"
+        text.lineBreakMode = NSLineBreakByTruncatingTail;
+        text.usesSingleLineMode = YES;
         text.drawsBackground = NO;
         text.stringValue = action.label;
         [text setBordered:NO];

@@ -659,6 +659,7 @@ static BOOL SIAccessibilityGranted(void) {
     FMTAssertNotNil(action);
 
     FMTHotKey *newHotKey = [[[FMTHotKey alloc] initWithKeyCode:keyCode modifiers:modifiers] autorelease];
+    modifiers = [newHotKey modifiers];
 
     FMTHotKey *hotKey = [allHotKeys_ objectForKey:identifier];
     if (hotKey) {

@@ -36,8 +36,10 @@
 
 	keyCode_ = keyCode;
 	
-	// TODO: assert that the code and modifiers make sense	
-	modifiers_ = modifiers;
+	// TODO: assert that the code and modifiers make sense
+	// a recorded arrow or function key also carries the Fn and NumericPad flags; they are not
+	// modifier keys and a Carbon hot key registered with them never fires
+	modifiers_ = modifiers & (NSEventModifierFlagShift | NSEventModifierFlagControl | NSEventModifierFlagOption | NSEventModifierFlagCommand);
 	
 	return self;
 }

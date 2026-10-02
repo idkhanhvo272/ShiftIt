@@ -52,8 +52,6 @@ typedef enum {
 extern NSString *const kShowPreferencesRequestNotification;
 
 // local notifications
-extern NSString *const kDidFinishEditingHotKeysPrefNotification;
-extern NSString *const kDidStartEditingHotKeysPrefNotification;
 extern NSString *const kHotKeyChangedNotification;
 
 // kHotKeyChangedNotification userInfo keys

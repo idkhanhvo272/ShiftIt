@@ -23,8 +23,6 @@
 NSString *const kKeyCodePrefKeySuffix = @"KeyCode";
 NSString *const kModifiersPrefKeySuffix = @"Modifiers";
 
-NSString *const kDidFinishEditingHotKeysPrefNotification = @"kEnableActionsRequestNotification";
-NSString *const kDidStartEditingHotKeysPrefNotification = @"kDisableActionsRequestNotification";
 NSString *const kHotKeyChangedNotification = @"kHotKeyChangedNotification";
 NSString *const kActionIdentifierKey = @"kActionIdentifierKey";
 NSString *const kHotKeyKeyCodeKey = @"kHotKeyKeyCodeKey";
@@ -33,13 +31,6 @@ NSString *const kHotKeyModifiersKey = @"kHotKeyModifiersKey";
 NSString *const kShiftItGithubIssueURL = @"https://github.com/idkhanhvo272/ShiftIt/issues";
 
 NSString *const kHotKeysTabViewItemIdentifier = @"hotKeys";
-
-@interface PreferencesWindowController (Private)
-
-- (void)windowMainStatusChanged_:(NSNotification *)notification;
-
-@end
-
 
 @implementation PreferencesWindowController
 
@@ -64,10 +55,6 @@ NSString *const kHotKeysTabViewItemIdentifier = @"hotKeys";
 
     NSString *versionString = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
     [versionLabel_ setStringValue:versionString];
-
-    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
-    [notificationCenter addObserver:self selector:@selector(windowMainStatusChanged_:) name:NSWindowDidResignMainNotification object:[self window]];
-    [notificationCenter addObserver:self selector:@selector(windowMainStatusChanged_:) name:NSWindowDidBecomeMainNotification object:[self window]];
 
     // no debug logging by default
     [self setDebugLoggingFile:@""];
@@ -306,27 +293,12 @@ static NSString *hotkeyIdentifiers[] = {
     [recorder setKeyCombo:combo keyChars:nil keyCharsIgnoringModifiers:nil];
 }
 
-#pragma mark TabView delegate methods
-
-- (void)tabView:(NSTabView *)tabView didSelectTabViewItem:(NSTabViewItem *)tabViewItem {
-    // TODO: why not to use the tabViewItem
-    if ([selectedTabIdentifier_ isEqualTo:kHotKeysTabViewItemIdentifier]) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:kDidStartEditingHotKeysPrefNotification object:nil];
-    } else {
-        [[NSNotificationCenter defaultCenter] postNotificationName:kDidFinishEditingHotKeysPrefNotification object:nil];
-    }
-}
-
-#pragma mark Notification handling methods
-
-- (void)windowMainStatusChanged_:(NSNotification *)notification {
-    NSString *name = [notification name];
-
-    if ([name isEqualToString:NSWindowDidBecomeMainNotification] && [selectedTabIdentifier_ isEqualToString:kHotKeysTabViewItemIdentifier]) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:kDidStartEditingHotKeysPrefNotification object:nil];
-    } else if ([name isEqualToString:NSWindowDidResignMainNotification]) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:kDidFinishEditingHotKeysPrefNotification object:nil];
-    }
+// Hotkeys are ignored while the user records shortcuts. This is checked on every invocation rather than
+// tracked through window notifications, which never resume when the window closes without being main.
+- (BOOL)isEditingHotKeys {
+    return [self isWindowLoaded]
+            && [[self window] isKeyWindow]
+            && [selectedTabIdentifier_ isEqualToString:kHotKeysTabViewItemIdentifier];
 }
 
 @end

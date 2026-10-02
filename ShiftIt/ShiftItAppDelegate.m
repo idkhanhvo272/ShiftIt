@@ -227,8 +227,6 @@ NSDictionary *allShiftActions = nil;
 
 - (void)shiftItActionHotKeyChanged_:(NSNotification *)notification;
 
-- (void)handleActionsStateChangeRequest_:(NSNotification *)notification;
-
 - (IBAction)shiftItMenuAction_:(id)sender;
 
 @end
@@ -241,7 +239,6 @@ NSDictionary *allShiftActions = nil;
 
     SIUsageStatistics *usageStatistics_;
     NSMutableDictionary *allHotKeys_;
-    BOOL paused_;
 
     NSStatusItem *statusItem_;
 
@@ -494,8 +491,6 @@ static BOOL SIAccessibilityGranted(void) {
 
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:@selector(shiftItActionHotKeyChanged_:) name:kHotKeyChangedNotification object:nil];
-    [notificationCenter addObserver:self selector:@selector(handleActionsStateChangeRequest_:) name:kDidFinishEditingHotKeysPrefNotification object:nil];
-    [notificationCenter addObserver:self selector:@selector(handleActionsStateChangeRequest_:) name:kDidStartEditingHotKeysPrefNotification object:nil];
 
     notificationCenter = [NSDistributedNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:@selector(handleShowPreferencesRequest_:) name:kShowPreferencesRequestNotification object:nil];
@@ -629,23 +624,6 @@ static BOOL SIAccessibilityGranted(void) {
     [self showPreferences:self];
 }
 
-- (void)handleActionsStateChangeRequest_:(NSNotification *)notification {
-    NSString *name = [notification name];
-
-    if ([name isEqualToString:kDidFinishEditingHotKeysPrefNotification]) {
-        @synchronized (self) {
-            paused_ = NO;
-            FMTLogDebug(@"Resuming actions");
-        }
-    } else if ([name isEqualToString:kDidStartEditingHotKeysPrefNotification]) {
-        @synchronized (self) {
-            paused_ = YES;
-            FMTLogDebug(@"Pausing actions");
-        }
-    }
-
-}
-
 - (void)shiftItActionHotKeyChanged_:(NSNotification *)notification {
     NSDictionary *userInfo = [notification userInfo];
 
@@ -697,8 +675,8 @@ static BOOL SIAccessibilityGranted(void) {
 - (void)invokeShiftItActionByIdentifier_:(NSString *)identifier {
     // TODO: use grand central dispatch instead synchronize!
     @synchronized (self) {
-        if (paused_) {
-            FMTLogDebug(@"The functionality is temporarly paused");
+        if ([preferencesController_ isEditingHotKeys]) {
+            FMTLogDebug(@"Hotkeys are being edited, ignoring action");
             return;
         }
 

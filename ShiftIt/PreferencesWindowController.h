@@ -41,6 +41,7 @@
 @property(copy) NSString *debugLoggingFile;
 
 -(void)updateRecorderCombos;
+-(BOOL)isEditingHotKeys;
 -(IBAction)showPreferences:(id)sender;
 -(IBAction)checkForUpdates:(id)sender;
 -(IBAction)revertDefaults:(id)sender;
